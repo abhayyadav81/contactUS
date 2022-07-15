@@ -28,7 +28,7 @@ const DetailScreen = ({ navigation }) => {
         }
     }
     const mobilevalidate = (text) => {
-        const reg = /^[0]?[789]\d{9}$/;
+        let reg=/^[0-9]{10}$/;
         if (reg.test(text) === false) {
             setNumber(text)
             setPhoneNumberValidate(false)
@@ -71,20 +71,20 @@ const DetailScreen = ({ navigation }) => {
                 <View style={{ marginTop: 20, }}>
                     <Text style={styles.text}>Enter Name :</Text>
                     <TextInput style={styles.TextInput} placeholder=' your full name' onChangeText={onEnterText} />
-                    {!textInputValue ? <Text style={{ color: '#8B0000', fontSize: 20 }}>full name is required </Text> : null}
+                    {!textInputValue ? <Text style={{ color: '#8B0000', fontSize: 12 }}>full name is required </Text> : null}
                 </View>
-                <View style={{}}>
+                <View style={{marginTop:10}}>
                     <Text style={styles.text}>Enter Mobile Number :</Text>
 
                     <TextInput style={styles.TextInput} placeholder=' mobile number' keyboardType='numeric' onChangeText={mobilevalidate} maxLength={10} />
-                    {!phoneNumberValidate ? <Text style={{ color: '#8B0000', fontSize: 20 }}>phone number is not valid</Text> : null}
+                    {!phoneNumberValidate ? <Text style={{ color: '#8B0000', fontSize: 12 }}>phone number is not valid</Text> : null}
 
                 </View>
                 <View style={{ marginTop: 20, }}>
                     <Text style={styles.text}>Enter Email :</Text>
 
                     <TextInput style={styles.TextInput} placeholder=' email' onChangeText={onChnageEmailValidate} />
-                    {!emailValidate ? <Text style={{ color: '#8B0000', fontSize: 20 }}>email is not valid</Text> : null}
+                    {!emailValidate ? <Text style={{ color: '#8B0000', fontSize: 12 }}>email is not valid</Text> : null}
 
                 </View>
 
@@ -95,7 +95,7 @@ const DetailScreen = ({ navigation }) => {
                     </View>
                 </View>
                 <TouchableOpacity style={styles.submitButton} onPress={() => validate()}>
-                    <Text style={{ fontSize: 25, color: 'white' }}>SendMail</Text>
+                    <Text style={{ fontSize: 25, color: 'white' }}>Send Mail</Text>
                 </TouchableOpacity>
 
 
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
         // backgroundColor: '#FFDEAD',
         alignItems: 'center', height: 50,
         borderRadius: 2,
-        fontSize: 20,
-        color: '#191970',
+        fontSize: 18,
+        color: 'black',
         borderWidth: 1,
         borderRadius: 10,
         padding: 8
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     text: {
-        fontSize: 20,
+        fontSize: 15,
         color: '#556B2F'
     },
     messageBox: {
